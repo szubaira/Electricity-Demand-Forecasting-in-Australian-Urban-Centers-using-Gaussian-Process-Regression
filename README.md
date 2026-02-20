@@ -24,14 +24,10 @@ The analysis was performed on a dataset recording seven days of electricity dema
 I implemented and optimized a **Gaussian Process Regressor** using a comparative kernel approach to determine the best fit for the periodic demand signal:
 
 * **Kernels Evaluated:** * **ExpSineSquared:** Used to model the inherent daily periodicity of the demand.
-* **Rational Quadratic (RQ):** Applied to capture variations across different length scales.
-* **Composite Kernels:** Optimized combinations such as (Constant * ExpSineSquared) and a complex mixture (Constant * ExpSineSquared * Rational Quadratic) to account for both cyclic behavior and structural trends.
-
-
+  * **Rational Quadratic (RQ):** Applied to capture variations across different length scales.
+  * **Composite Kernels:** Optimized combinations such as (Constant * ExpSineSquared) and a complex mixture (Constant * ExpSineSquared * Rational Quadratic) to account for both cyclic     behavior and structural trends.
 * **Evaluation Metrics:** * **95% Confidence Interval:** Used to evaluate the model's reliability and quantify predictive uncertainty.
-* **Visual Fit:** Compared predictions against red-dot observations to assess how well the kernels captured the daily demand "peaks" and "valleys".
-
-
+  * **Visual Fit:** Compared predictions against red-dot observations to assess how well the kernels captured the daily demand "peaks" and "valleys".
 * **Optimization:** Utilized `n_restarts_optimizer` to avoid local minima and ensure the convergence of kernel hyperparameters.
 
 ### **Conclusion**
