@@ -1,6 +1,5 @@
 ## **Electricity Demand Forecasting in Australian Urban Centers using Gaussian Process Regression**
 
-
 ### **Project Overview**
 
 This project focused on developing a high-resolution forecasting model to predict half-hourly electricity demand over a seven-day period for a city in Australia. By utilizing **Gaussian Process Regression (GPR)** from the Scikit-learn library, the analysis successfully captured the complex, non-linear, and periodic nature of energy consumption patterns. The resulting models provided not only point estimates for demand but also quantified uncertainty through 95% confidence intervals, enabling more robust operational planning for energy providers.
@@ -27,8 +26,12 @@ I implemented and optimized a **Gaussian Process Regressor** using a comparative
 * **Kernels Evaluated:** * **ExpSineSquared:** Used to model the inherent daily periodicity of the demand.
 * **Rational Quadratic (RQ):** Applied to capture variations across different length scales.
 * **Composite Kernels:** Optimized combinations such as (Constant * ExpSineSquared) and a complex mixture (Constant * ExpSineSquared * Rational Quadratic) to account for both cyclic behavior and structural trends.
+
+
 * **Evaluation Metrics:** * **95% Confidence Interval:** Used to evaluate the model's reliability and quantify predictive uncertainty.
 * **Visual Fit:** Compared predictions against red-dot observations to assess how well the kernels captured the daily demand "peaks" and "valleys".
+
+
 * **Optimization:** Utilized `n_restarts_optimizer` to avoid local minima and ensure the convergence of kernel hyperparameters.
 
 ### **Conclusion**
